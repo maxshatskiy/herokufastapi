@@ -90,7 +90,7 @@ def model_inference(data:Person):
                                         encoder=encoder)
 
     preds = inference(model, X_test_encoded)
-    print(df)
+
     return {"prediction": preds.tolist()[0]}
 
 if __name__=="__main__":
