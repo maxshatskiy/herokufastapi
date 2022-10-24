@@ -6,6 +6,13 @@ from model_train.ml.data import process_data
 from model_train.ml.model import inference
 import pandas as pd
 import uvicorn
+import os
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+     os.system("dvc config core.no_scm true")
+     if os.system("dvc pull") != 0:
+         exit("dvc pull failed")
+     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 app = FastAPI()
 
