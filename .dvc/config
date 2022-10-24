@@ -1,6 +1,8 @@
 [core]
-    remote = datastore
+    remote = s3-bucket
 ['remote "udacity-herokufastapi"']
     url = s3://udacity-herokufastapi
 ['remote "datastore"']
+    url = s3://dvc-store-herokufastapi
+['remote "s3-bucket"']
     url = s3://dvc-store-herokufastapi
