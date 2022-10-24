@@ -2,15 +2,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model._logistic import LogisticRegression
 import pandas as pd
 from numpy import ndarray
-from starter.ml.data import process_data
-from starter.ml.model import train_model
-from starter.ml.model import compute_model_metrics
-from starter.ml.model import inference
+from model_train.ml.data import process_data
+from model_train.ml.model import train_model
+from model_train.ml.model import compute_model_metrics
+from model_train.ml.model import inference
 import pytest
 
 @pytest.fixture(scope='module')
 def prepare_test():
-    data = pd.read_csv("../data/census_сleaned.csv")
+    data = pd.read_csv("./data/census_сleaned.csv")
     train, test = train_test_split(data, test_size=0.20)
     cat_features = [
         "workclass",

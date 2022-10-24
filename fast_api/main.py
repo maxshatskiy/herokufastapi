@@ -2,8 +2,8 @@ from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 import joblib
-from starter.ml.data import process_data
-from starter.ml.model import inference
+from model_train.ml.data import process_data
+from model_train.ml.model import inference
 import pandas as pd
 import uvicorn
 
