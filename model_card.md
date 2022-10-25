@@ -17,6 +17,11 @@ Categorical variables were preprocessed using OneHotEncoding.
 
 ## Metrics
 The following metrics are reported for the model: F1-beta score, precision, and recall.
+The performance was as following:
+precision: 0.714
+recall: 0.264
+F1-beta: 0.385
+
 
 ## Caveats and Recommendations
 This model should additionally be tested for racial and gender biases.
