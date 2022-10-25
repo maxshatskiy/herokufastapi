@@ -33,11 +33,35 @@ model = train_model(X_train, y_train)
 preds = inference(model, X_test)
 
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
-#print(precision)
-#print(recall)
-#print(fbeta)
+with open("./model_train/model_metrics.txt", 'w') as f:
+    f.write('%s,%s,%s\n' % ("precision", "recall", "fbeta"))
+    f.write('%s,%s,%s\n' % (precision, recall,fbeta))
+f.close()
+
 metrics_on_slices = compute_model_metrics_on_cat_feature(preds, y_test, test, cat_feature=cat_features[0])
 with open("./model_train/slice_output.txt", 'w') as f:
+    f.write('%s,%s,%s,%s\n' % ("level", "precision", "recall", "fbeta"))
+    for key, val in metrics_on_slices.items():
+        f.write('%s:%s\n' % (key, val))
+f.close()
+
+metrics_on_slices = compute_model_metrics_on_cat_feature(preds, y_test, test, cat_feature="race")
+with open("./model_train/slice_output_race.txt", 'w') as f:
+    f.write('%s,%s,%s,%s\n' % ("level", "precision", "recall", "fbeta"))
+    for key, val in metrics_on_slices.items():
+        f.write('%s:%s\n' % (key, val))
+f.close()
+
+metrics_on_slices = compute_model_metrics_on_cat_feature(preds, y_test, test, cat_feature="sex")
+with open("./model_train/slice_output_sex.txt", 'w') as f:
+    f.write('%s,%s,%s,%s\n' % ("level", "precision", "recall", "fbeta"))
+    for key, val in metrics_on_slices.items():
+        f.write('%s:%s\n' % (key, val))
+f.close()
+
+metrics_on_slices = compute_model_metrics_on_cat_feature(preds, y_test, test, cat_feature="native-country")
+with open("./model_train/slice_output_sex.txt", 'w') as f:
+    f.write('%s,%s,%s,%s\n' % ("level", "precision", "recall", "fbeta"))
     for key, val in metrics_on_slices.items():
         f.write('%s:%s\n' % (key, val))
 f.close()
