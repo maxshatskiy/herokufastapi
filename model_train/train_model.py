@@ -60,7 +60,7 @@ with open("./model_train/slice_output_sex.txt", 'w') as f:
 f.close()
 
 metrics_on_slices = compute_model_metrics_on_cat_feature(preds, y_test, test, cat_feature="native-country")
-with open("./model_train/slice_output_sex.txt", 'w') as f:
+with open("./model_train/slice_output_native_country.txt", 'w') as f:
     f.write('%s,%s,%s,%s\n' % ("level", "precision", "recall", "fbeta"))
     for key, val in metrics_on_slices.items():
         f.write('%s:%s\n' % (key, val))

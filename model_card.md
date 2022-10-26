@@ -21,7 +21,12 @@ The performance was as following:
 precision: 0.714
 recall: 0.264
 F1-beta: 0.385
-
+## Ethical aspects
+Performance of the model on different slices for sex and race are saved in "slice_output_race.txt" and
+"slice_output_sex.txt".
+It can be seen that model has similar performance for 3 groups: White, Asian-Pac-Islander, and Black, but much worse for
+Amer-Indian-Eskimo, which could be related to fewer data points avaliable for training for this group.
+Additionally precision of the model for males is almost 80% higher than for female person.
 
 ## Caveats and Recommendations
 This model should additionally be tested for racial and gender biases.
