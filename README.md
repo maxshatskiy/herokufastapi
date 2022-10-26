@@ -3,6 +3,7 @@ where GitHub Actions are used for CI. Namely flake8 is used to check for syntax 
 before deployment. The FasAPI is used to expose functionality of the model. If CI finished successfully, then
 it is automatically deployed to Heroku.
 
+Workflow used in this project:
 * DVC with S3 as remote repository.
 * GitHub Actions for continious integration.
 * FastAPI to create model API.
